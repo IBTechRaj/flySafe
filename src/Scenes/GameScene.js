@@ -13,6 +13,15 @@ export default class GameScene extends Phaser.Scene {
   create() {
     // this.add.image(400, 300, 'logo');
     // emitter = new Phaser.Events.EventEmitter();
+    // this.makeInfo();
+    this.score = 0;
+    this.penalty = 0;
+    this.netScore = 0;
+    this.scoreText1 = this.add.text(10, 10, 'Score Earned   : ', { fontSize: '12px', fill: '#023' });
+    this.scoreText2 = this.add.text(10, 20, 'Score Lost  : ', { fontSize: '12px', fill: '#023' });
+
+    // this.scoreText = this.add.text(16, 16, 'score: ' + this.score, { fontSize: '12px', fill: '#023' });
+    // this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#023' });
     this.cursors = this.input.keyboard.createCursorKeys();
 
     this.centerX = game.config.width / 2;
@@ -65,15 +74,70 @@ export default class GameScene extends Phaser.Scene {
     }.bind(this));
 
     this.physics.add.collider(this.plane, this.birdGroup, this.birdScream, null, this);
+    this.makeInfo();
     // this.physics.add.collider(sprite, group);
 
   }
   birdScream() {
     // emitter.emit(G.PLAY_SOUND, "scream");
     this.sound.play('scream');
+    this.penalty += 20;
+    this.text1.setText("Score Earned: " + this.score);
+    this.text2.setText("Score Lost  : " + this.penalty);
+     this.text3.setText("Your Score  : " + this.score - this.penalty);
   }
+  makeInfo() {
+    this.text1 = this.add.text(10, 10, "Score Earned: ", {
+      fontSize: game.config.width / 30,
+      align: "center",
+      backgroundColor: '#000000'
+    });
+    this.text2 = this.add.text(10, 30, "Score Lost   : ", {
+      fontSize: game.config.width / 30,
+      align: "center",
+      backgroundColor: '#000000'
+    });
+    this.text3 = this.add.text(10, 50, "Your Score    : ", {
+      fontSize: game.config.width / 30,
+      align: "center",
+      backgroundColor: '#000000'
+    });
+    // this.text1.setOrigin(0.5, 0.5);
+    // this.text2.setOrigin(0.5, 0.5);
+    this.text1.setScrollFactor(0);
+    this.text2.setScrollFactor(0);
+    this.text3.setScrollFactor(0);
+  }
+  upscore() {
+    this.score += 1;
+    // this.text1.setText("Shields\n" + this.shields);
+    // this.scoreText1.text = "Score Earned:       ";
+    this.text1.setText("Score Earned: " + this.score);
+    this.text2.setText("Score Lost  : " + this.penalty);
+    this.text3.setText("Your Score  : " + this.score - this.penalty);
+  }
+
   update() {
+
+    // this.scoreText1.setText('Scorb Earned:      ');
+    // this.scoreText1 = this.add.text(10, 10, "Scora Earned: ", { fontSize: '12px', fill: '#023' });
+    // this.scoreText1 = this.add.text(10, 10, 'Scora Earned: ' + this.score, { fontSize: '12px', fill: '#023' });
+    // this.scoreText2 = this.add.text(10, 20, 'Score Lost  : ', { fontSize: '12px', fill: '#023' });
+
+    // this.scoreText1.setText('Scorb Earned:      ');
+
+    // this.scoreText1.setScrollFactor(0);
+
+
+    // this.scoreText2.setText('Score Lost  :      ');
+    // this.scoreText2.setText('Score Lost  : ' + this.penalty);
+    // this.scoreText2.setScrollFactor(0);
+
+
+    // this.scoreText.setText('Score: ' + this.score);
+
     this.plane.body.setVelocity(0);
+
 
     // Horizontal movement
     if (this.cursors.left.isDown) {
@@ -81,6 +145,7 @@ export default class GameScene extends Phaser.Scene {
     }
     else if (this.cursors.right.isDown) {
       this.plane.body.setVelocityX(80);
+      this.upscore();
     }
 
     // Vertical movement
