@@ -12,6 +12,7 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     // this.add.image(400, 300, 'logo');
+    // emitter = new Phaser.Events.EventEmitter();
     this.cursors = this.input.keyboard.createCursorKeys();
 
     this.centerX = game.config.width / 2;
@@ -63,9 +64,13 @@ export default class GameScene extends Phaser.Scene {
 
     }.bind(this));
 
-    this.physics.add.collider(this.plane, this.birds);
+    this.physics.add.collider(this.plane, this.birdGroup, this.birdScream, null, this);
+    // this.physics.add.collider(sprite, group);
 
-
+  }
+  birdScream() {
+    // emitter.emit(G.PLAY_SOUND, "scream");
+    this.sound.play('scream');
   }
   update() {
     this.plane.body.setVelocity(0);
