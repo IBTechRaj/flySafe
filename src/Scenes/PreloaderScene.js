@@ -10,15 +10,13 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
-    // add logo image
-    this.add.image(400, 200, 'logo');
 
     // display progress bar
-    var score = 0;
-    var scoreText1;
-    var scoreText2;
-    var netScore=0;
-    var penalty = 0;
+    // var score = 0;
+    // var scoreText1;
+    // var scoreText2;
+    // var netScore=0;
+    // var penalty = 0;
 
     var progressBar = this.add.graphics();
     var progressBox = this.add.graphics();
@@ -32,7 +30,7 @@ export default class PreloaderScene extends Phaser.Scene {
       y: height / 2 - 50,
       text: 'Loading...',
       style: {
-        font: '20px monospace',
+        font: '12px monospace',
         fill: '#ffffff'
       }
     });
@@ -88,7 +86,7 @@ export default class PreloaderScene extends Phaser.Scene {
     // load assets needed in our game
     this.load.image('blueButton1', 'assets/ui/blue_button02.png');
     this.load.image('blueButton2', 'assets/ui/blue_button03.png');
-    this.load.image('phaserLogo', 'assets/logo.png');
+    // this.load.image('phaserLogo', 'assets/logo.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.audio('bgMusic', ['assets/b131.mp3']);
