@@ -69,7 +69,7 @@ export default class GameScene extends Phaser.Scene {
     this.penalty += 20;
     this.text1.setText(`Score Earned: ${this.score}`);
     this.text2.setText(`Score Lost  : ${this.penalty}`);
-    this.netScore = this.score - this.penalty
+    this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
   }
 
@@ -98,7 +98,7 @@ export default class GameScene extends Phaser.Scene {
     this.score += 1;
     this.text1.setText(`Score Earned: ${this.score}`);
     this.text2.setText(`Score Lost  : ${this.penalty}`);
-    this.netScore = this.score - this.penalty
+    this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
   }
 
