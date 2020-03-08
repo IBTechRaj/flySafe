@@ -27,5 +27,11 @@
     "eslint-plugin-import": "^2.20.1",
     "raw-loader": "^0.5.1",
     "webpack-dev-server": "^2.11.0"
-  }
+  },
+  "eslintIgnore": [
+    "build/project.bundle.js",
+    "src/phaser.min.js",
+    "webpack/base.js",
+    "webpack/prod.js"
+  ]
 }

@@ -1,3 +1,6 @@
+/*  global Phaser  */
+/*  eslint no-undef: "error"  */
+
 import 'phaser';
 
 export default class BootScene extends Phaser.Scene {

@@ -1,3 +1,7 @@
+/*  global Phaser  */
+/*  eslint no-undef: "error"  */
+/*  eslint class-methods-use-this: ["error", { "exceptMethods": ["preload"] }]  */
+
 import 'phaser';
 
 export default class GameScene extends Phaser.Scene {
@@ -71,6 +75,9 @@ export default class GameScene extends Phaser.Scene {
     this.text2.setText(`Score Lost  : ${this.penalty}`);
     this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
+    if (this.netScore < 0 || this.netScore > 10000) {
+      this.endGame();
+    }
   }
 
   makeInfo() {
@@ -100,6 +107,13 @@ export default class GameScene extends Phaser.Scene {
     this.text2.setText(`Score Lost  : ${this.penalty}`);
     this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
+    if (this.netScore < 0 || this.netScore > 10000) {
+      this.endGame();
+    }
+  }
+
+  endGame() {
+    this.scene.start('GameOver');
   }
 
   update() {

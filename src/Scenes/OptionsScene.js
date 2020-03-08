@@ -1,3 +1,6 @@
+/*  global Phaser  */
+/*  eslint no-undef: "error"  */
+
 import 'phaser';
 import Button from '../Objects/Button';
 

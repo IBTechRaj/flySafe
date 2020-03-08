@@ -1,3 +1,6 @@
+/*  global Phaser  */
+/*  eslint no-undef: "error"  */
+
 import 'phaser';
 
 export default class Button extends Phaser.GameObjects.Container {
