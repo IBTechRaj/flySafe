@@ -3,6 +3,8 @@
 /*  eslint class-methods-use-this: ["error", { "exceptMethods": ["preload"] }]  */
 
 import 'phaser';
+import config from '../Config/config';
+import Button from '../Objects/Button';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -13,6 +15,8 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    this.displayResult = '';
+    this.gameOver = '';
     this.score = 0;
     this.penalty = 0;
     this.netScore = 0;
@@ -60,7 +64,7 @@ export default class GameScene extends Phaser.Scene {
         vx = 1;
         vy = 1;
       }
-      const speed = Math.floor(Math.random() * 200) + 10;
+      const speed = Math.floor(Math.random() * 200) + 5;
       child.body.setVelocity(vx * speed, vy * speed);
     });
 
@@ -70,7 +74,7 @@ export default class GameScene extends Phaser.Scene {
 
   birdScream() {
     this.sound.play('scream');
-    this.penalty += 20;
+    this.penalty += 5;
     this.text1.setText(`Score Earned: ${this.score}`);
     this.text2.setText(`Score Lost  : ${this.penalty}`);
     this.netScore = this.score - this.penalty;
@@ -102,18 +106,45 @@ export default class GameScene extends Phaser.Scene {
   }
 
   upscore() {
+    if (this.netScore < 0 || this.netScore > 1000) {
+      this.endGame();
+    }
     this.score += 1;
     this.text1.setText(`Score Earned: ${this.score}`);
     this.text2.setText(`Score Lost  : ${this.penalty}`);
     this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
-    if (this.netScore < 0 || this.netScore > 1000) {
-      this.endGame();
-    }
   }
 
   endGame() {
-    this.scene.start('GameOver');
+    this.gameOver = this.add.text(config.width / 2 - 80, config.height / 2 - 150, 'GAME OVER ', {
+      fontSize: this.game.config.width / 20,
+      align: 'center',
+      backgroundColor: '#000000',
+    });
+
+    this.result = this.add.text('');
+
+    if (this.netScore > 0) {
+      this.result = `Congrats, you have scored  ${this.netScore}`;
+    }
+    if (this.netScore < 0) {
+      this.result = 'Sorry, you lost, Try Again';
+    }
+
+    this.displayResult = this.add.text(config.width / 2 - 280, config.height / 2 - 80,
+      this.result, {
+      fontSize: this.game.config.width / 20,
+      align: 'center',
+      backgroundColor: '#000000',
+    });
+
+    this.gameOver.setScrollFactor(0);
+    this.displayResult.setScrollFactor(0);
+
+    this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
+      'blueButton1', 'blueButton2', 'Quit Game', 'Title');
+    this.quitGameBtn.setScrollFactor(0);
   }
 
   update() {
