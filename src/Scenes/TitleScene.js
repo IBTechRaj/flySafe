@@ -20,11 +20,11 @@ export default class TitleScene extends Phaser.Scene {
       backgroundColor: '#000000',
     });
 
-    this.userName = this.add.text(10, 10, 'Your Name ?: ', {
-      fontSize: this.game.config.width / 40,
-      align: 'center',
-      backgroundColor: '#000000',
-    });
+    // this.userName = this.add.text(10, 10, 'Your Name ?: ', {
+    //   fontSize: this.game.config.width / 40,
+    //   align: 'center',
+    //   backgroundColor: '#000000',
+    // });
     // Game
     this.gameButton = new Button(this, config.width / 2, config.height / 2 - 80, 'blueButton1', 'blueButton2', 'Play', 'Game');
 

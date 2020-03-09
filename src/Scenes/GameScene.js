@@ -75,7 +75,7 @@ export default class GameScene extends Phaser.Scene {
     this.text2.setText(`Score Lost  : ${this.penalty}`);
     this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
-    if (this.netScore < 0 || this.netScore > 10000) {
+    if (this.netScore < 0 || this.netScore > 1000) {
       this.endGame();
     }
   }
@@ -107,7 +107,7 @@ export default class GameScene extends Phaser.Scene {
     this.text2.setText(`Score Lost  : ${this.penalty}`);
     this.netScore = this.score - this.penalty;
     this.text3.setText(`Your Score  : ${this.netScore}`);
-    if (this.netScore < 0 || this.netScore > 10000) {
+    if (this.netScore < 0 || this.netScore > 1000) {
       this.endGame();
     }
   }

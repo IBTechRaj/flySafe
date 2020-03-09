@@ -24,6 +24,7 @@ export default class GameOverScene extends Phaser.Scene {
     });
 
     this.playAgainBtn = new Button(this, config.width / 2, config.height / 2 - 80, 'blueButton1', 'blueButton2', 'Play Again', 'Game');
+    this.quitGameBtn = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Quit Game', 'Title');
   }
 
   startGame() {
