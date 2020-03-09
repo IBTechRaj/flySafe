@@ -64,7 +64,7 @@ export default class GameScene extends Phaser.Scene {
         vx = 1;
         vy = 1;
       }
-      const speed = Math.floor(Math.random() * 200) + 5;
+      const speed = Math.floor(Math.random() * 100) + 15;
       child.body.setVelocity(vx * speed, vy * speed);
     });
 
@@ -72,8 +72,9 @@ export default class GameScene extends Phaser.Scene {
     this.makeInfo();
   }
 
-  birdScream() {
+  birdScream(bird, plane) {
     this.sound.play('scream');
+    // bird.destroy();
     this.penalty += 5;
     this.text1.setText(`Score Earned: ${this.score}`);
     this.text2.setText(`Score Lost  : ${this.penalty}`);
