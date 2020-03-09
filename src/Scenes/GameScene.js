@@ -68,13 +68,14 @@ export default class GameScene extends Phaser.Scene {
       child.body.setVelocity(vx * speed, vy * speed);
     });
 
-    this.physics.add.collider(this.plane, this.birdGroup, this.birdScream, null, this);
+    this.physics.add.collider(this.birdGroup, this.plane, this.birdScream, null, this);
     this.makeInfo();
   }
 
-  birdScream(bird, plane) {
+  birdScream(plane, bird) {
     this.sound.play('scream');
-    // bird.destroy();
+    // bird.setVelocity(0);
+    bird.destroy();
     this.penalty += 5;
     this.text1.setText(`Score Earned: ${this.score}`);
     this.text2.setText(`Score Lost  : ${this.penalty}`);
