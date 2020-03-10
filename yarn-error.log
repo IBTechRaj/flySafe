@@ -1,0 +1,73 @@
+Arguments: 
+  /home/raj/.nvm/versions/node/v10.16.3/bin/node /home/raj/.yarn/bin/yarn.js add --dev jest
+
+PATH: 
+  /home/raj/.rvm/gems/ruby-2.6.0/bin:/home/raj/.rvm/gems/ruby-2.6.0@global/bin:/home/raj/.rvm/rubies/ruby-2.6.0/bin:/home/raj/bin:/home/raj/.local/bin:/home/raj/.yarn/bin:/home/raj/.config/yarn/global/node_modules/.bin:/home/raj/.nvm/versions/node/v10.16.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/PuTTY:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/manipal/AppData/Local/Programs/Python/Python36-32/Scripts:/mnt/c/Users/manipal/AppData/Local/Programs/Python/Python36-32:/mnt/c/Users/manipal/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/manipal/AppData/Roaming/npm:/snap/bin:/home/raj/.rvm/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.4.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/home/raj/.yarn/lib/cli.js:141191:19)
+      at Object.onceWrapper (events.js:286:20)
+      at ClientRequest.emit (events.js:198:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:662:40)
+      at Object.onceWrapper (events.js:286:20)
+      at TLSSocket.emit (events.js:198:13)
+      at TLSSocket.Socket._onTimeout (net.js:442:8)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
+
+npm manifest: 
+  {
+    "name": "phaser3-project-template-3",
+    "version": "1.0.0",
+    "description": "A Phaser 3 Project Template",
+    "main": "src/index.js",
+    "scripts": {
+      "build": "webpack",
+      "start": "npm run build && webpack-dev-server --port=8000",
+      "heroku-postbuild": "npm run build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://scottwestover@bitbucket.org/creativerendering/phaser3-template.git"
+    },
+    "license": "MIT",
+    "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+    "bugs": {
+      "url": "https://github.com/photonstorm/phaser3-project-template/issues"
+    },
+    "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
+    "dependencies": {
+      "phaser": "^3.3.0",
+      "webpack": "^3.4.1"
+    },
+    "devDependencies": {
+      "eslint": "^6.8.0",
+      "eslint-config-airbnb-base": "^14.0.0",
+      "eslint-plugin-import": "^2.20.1",
+      "raw-loader": "^0.5.1",
+      "webpack-dev-server": "^2.11.0"
+    },
+    "eslintIgnore": [
+      "build/project.bundle.js",
+      "src/phaser.min.js",
+      "webpack/base.js",
+      "webpack/prod.js"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

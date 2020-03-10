@@ -3,11 +3,11 @@
 
 This is a video game you can play by clicking this link.
 
-In this game, you will see an open sky with a plane at the centre.  You can see some birds flying across the screen in all directions. You have to fly your plane avoiding contact with the birds.
+In this game, when you click on 'Play' button in the opening screen, you will see an open sky with a plane at the centre.  You can see some birds flying across the screen in all directions. You have to fly your plane avoiding contact with the birds.
 
 You will be scoring continuously as long as you keep moving in any direction. The score is shown at the top left corner of the screen.  If you hit a bird, you will incur penalty of 20 points and that is shown just below your score.  Your final score is displayed in the third line at the top left corner.
 
-The game will end when you score 1000 points or get a negative score.  You will be shown options either to replay or quit the game.
+The game will end when you score more than 1000 points or get a negative score.  You will use 'Quit Game' button to come main menu.
 
 Go ahead and enjoy the game.  If you have suggestions, you are welcome to send them to my email at the bottom of the screen.
 

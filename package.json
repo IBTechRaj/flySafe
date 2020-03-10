@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "npm run build && webpack-dev-server --port=8000",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,11 @@
     "webpack": "^3.4.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.8.7",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
+    "jest": "^25.1.0",
     "raw-loader": "^0.5.1",
     "webpack-dev-server": "^2.11.0"
   },
