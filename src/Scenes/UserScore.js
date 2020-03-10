@@ -1,24 +1,25 @@
+/*  global Phaser  */
+/*  eslint no-undef: "error"  */
+
 import 'phaser';
-import config from '../Config/config';
-import Button from '../Objects/Button';
 
 
 export default class UserScore extends Phaser.Scene {
-  constructor() {
+ constructor() {
+    super('UserScore');
   }
-
   async getScores() {
-    let url;
-    url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IQGIv2Nx5h002UPpElPS/scores/`;
+    const url;
+    url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IQGIv2Nx5h002UPpElPS/scores/';
     const userData = await fetch(url);
     const scores = await userData.json();
     return scores;
   }
 
   async postGame() {
-    const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/`;
+    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
     const gameName = {
-      "name": "flySafe"
+      'name': 'flySafe',
     };
     // request options
     const options = {
@@ -26,7 +27,7 @@ export default class UserScore extends Phaser.Scene {
       body: JSON.stringify(gameName),
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
     };
 
     // send POST request
@@ -41,8 +42,8 @@ export default class UserScore extends Phaser.Scene {
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BxAIfHmwEjEPsh8DTd3o/scores/`;
 
     const userScore = {
-      "user": "Raj",
-      "score": this.netScore
+      'user': 'Raj',
+      'score': this.netScore
     };
     // request options
     const options = {
@@ -58,18 +59,4 @@ export default class UserScore extends Phaser.Scene {
       .then(res => res.json())
       .then(res => console.log(res));
   }
-
-
-  // const ajax = new AjaxWeather();
-
-  //   ajax.
-
-
-  // this.getScore().then(data => {
-  //     console.log(data);
-  //     ajax.postScore();
-  //   }
-
-
 }
-

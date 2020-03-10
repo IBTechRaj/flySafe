@@ -26,7 +26,6 @@ export default class TitleScene extends Phaser.Scene {
     //   backgroundColor: '#000000',
     // });
     // Game
-    // this.userButton = new Button(this, config.width / 2, config.height / 2 - 80, 'blueButton1', 'blueButton2', 'User', 'User');
     this.gameButton = new Button(this, config.width / 2, config.height / 2 - 60, 'blueButton1', 'blueButton2', 'Play', 'Game');
 
     // Options
