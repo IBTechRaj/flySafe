@@ -148,6 +148,7 @@ export default class GameScene extends Phaser.Scene {
           align: 'center',
           backgroundColor: '#000000',
         });
+      this.scoreLine1.setScrollFactor(0);
       this.scoreLine2 = this.add.text(config.width / 2 - 80, config.height / 2 + 30,
         `Raj    -    ${this.netScore}`, {
           fontSize: this.game.config.width / 40,
@@ -156,7 +157,7 @@ export default class GameScene extends Phaser.Scene {
         });
       this.scoreLine2.setScrollFactor(0);
     }
-    this.scoreLine1.setScrollFactor(0);
+    
 
     this.gameOver.setScrollFactor(0);
     this.displayResult.setScrollFactor(0);
