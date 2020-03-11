@@ -16,7 +16,7 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     this.displayResult = '';
-    this.gameOver = '';
+    // this.gameOver = '';
     this.score = 0;
     this.penalty = 0;
     this.netScore = 0;
@@ -140,22 +140,24 @@ export default class GameScene extends Phaser.Scene {
         align: 'center',
         backgroundColor: '#000000',
       });
-    this.scoreLine1 = this.add.text(config.width / 2 - 80, config.height / 2,
-      'User   -   Score', {
-        fontSize: this.game.config.width / 40,
-        align: 'center',
-        backgroundColor: '#000000',
-      });
+
     if (this.netScore > 0) {
+      this.scoreLine1 = this.add.text(config.width / 2 - 80, config.height / 2,
+        'User   -   Score', {
+          fontSize: this.game.config.width / 40,
+          align: 'center',
+          backgroundColor: '#000000',
+        });
       this.scoreLine2 = this.add.text(config.width / 2 - 80, config.height / 2 + 30,
         `Raj    -    ${this.netScore}`, {
           fontSize: this.game.config.width / 40,
           align: 'center',
           backgroundColor: '#000000',
         });
+      this.scoreLine2.setScrollFactor(0);
     }
     this.scoreLine1.setScrollFactor(0);
-    this.scoreLine2.setScrollFactor(0);
+
     this.gameOver.setScrollFactor(0);
     this.displayResult.setScrollFactor(0);
 
