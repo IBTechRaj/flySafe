@@ -157,7 +157,6 @@ export default class GameScene extends Phaser.Scene {
         });
       this.scoreLine2.setScrollFactor(0);
     }
-    
 
     this.gameOver.setScrollFactor(0);
     this.displayResult.setScrollFactor(0);
