@@ -7,6 +7,7 @@ export default class Model {
     this._soundOn = true;
     this._musicOn = true;
     this._bgMusicPlaying = false;
+// this.netScore=0;
   }
 
   set musicOn(value) {
