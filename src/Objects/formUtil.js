@@ -20,6 +20,7 @@ export default class FormUtil {
         var el = document.getElementById(elName);
         var w = this.gameWidth * per;
         el.style.width = w + "px";
+        el.style.display = "block";
     }
     scaleToGameH(elName, per) {
         var el = document.getElementById(elName);

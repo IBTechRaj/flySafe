@@ -11,25 +11,14 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
-// initialize() {
-//         Phaser.Scene.call(this, { key: 'netScore' });
-//     }
-
   preload() {
-
-
-    // game.load.image('picture7', 'assets/pics/slayer-sorry_im_the_beast.png');
-
-
   }
 
  
 
   create() {
-this.text = this.add.text(32, 32);
-// timedEvent = this.time.delayedCall(3000, onEvent, [], this);
+    this.text = this.add.text(32, 32);
     this.displayResult = '';
-    // this.gameOver = '';
     this.score = 0;
     this.penalty = 0;
     this.netScore = 0;
@@ -40,7 +29,6 @@ this.text = this.add.text(32, 32);
 
     this.background = this.add.image(0, 0, 'background');
     this.background.setOrigin(0, 0);
-
 
     this.plane = this.physics.add.sprite(this.centerX, this.centerY, 'plane');
     this.plane.body.collideWorldBounds = true;
@@ -87,16 +75,15 @@ this.text = this.add.text(32, 32);
 
   birdScream(plane, bird) {
     this.sound.play('scream');
-    // bird.setVelocity(0);
     bird.destroy();
-    this.penalty += 5;
-    this.text1.setText(`Score Earned: ${this.score}`);
-    this.text2.setText(`Score Lost  : ${this.penalty}`);
-    this.netScore = this.score - this.penalty;
-    this.text3.setText(`Your Score  : ${this.netScore}`);
-    if (this.netScore < 0 || this.netScore > 10) {
+    // this.penalty += 5;
+    // this.text1.setText(`Score Earned: ${this.score}`);
+    // this.text2.setText(`Score Lost  : ${this.penalty}`);
+    // this.netScore = this.score - this.penalty;
+    // this.text3.setText(`Your Score  : ${this.netScore}`);
+    // if (this.netScore < 0 || this.netScore > 10) {
       this.endGame();
-    }
+    // }
   }
 
   makeInfo() {
@@ -105,36 +92,36 @@ this.text = this.add.text(32, 32);
       align: 'center',
       backgroundColor: '#000000',
     });
-    this.text2 = this.add.text(10, 30, 'Score Lost  : ', {
-      fontSize: this.game.config.width / 40,
-      align: 'center',
-      backgroundColor: '#000000',
-    });
-    this.text3 = this.add.text(10, 50, 'Your Score   : ', {
-      fontSize: this.game.config.width / 40,
-      align: 'center',
-      backgroundColor: '#000000',
-    });
+    // this.text2 = this.add.text(10, 30, 'Score Lost  : ', {
+    //   fontSize: this.game.config.width / 40,
+    //   align: 'center',
+    //   backgroundColor: '#000000',
+    // });
+    // this.text3 = this.add.text(10, 50, 'Your Score   : ', {
+    //   fontSize: this.game.config.width / 40,
+    //   align: 'center',
+    //   backgroundColor: '#000000',
+    // });
   this.text4 = this.add.text(200, 10, 'Elapsed Time: ', {
       fontSize: this.game.config.width / 40,
       align: 'center',
       backgroundColor: '#000000',
     });
     this.text1.setScrollFactor(0);
-    this.text2.setScrollFactor(0);
-    this.text3.setScrollFactor(0);
+    // this.text2.setScrollFactor(0);
+    // this.text3.setScrollFactor(0);
     this.text4.setScrollFactor(0);
   }
 
   upscore() {
-    if (this.netScore < 0 || this.netScore > 10) {
-      this.endGame();
-    }
+    // if (this.score <= 0 || this.score > 10) {
+    //   this.endGame();
+    // }
     this.score += 1;
     this.text1.setText(`Score Earned: ${this.score}`);
-    this.text2.setText(`Score Lost  : ${this.penalty}`);
-    this.netScore = this.score - this.penalty;
-    this.text3.setText(`Your Score  : ${this.netScore}`);
+    // this.text2.setText(`Score Lost  : ${this.penalty}`);
+    // this.netScore = this.score - this.penalty;
+    // this.text3.setText(`Your Score  : ${this.netScore}`);
   }
 
   endGame() {
@@ -146,10 +133,10 @@ this.text = this.add.text(32, 32);
 
     this.result = this.add.text('');
 
-    if (this.netScore > 0) {
-      this.result = `Congrats, you have scored  ${this.netScore}`;
+    if (this.score > 0) {
+      this.result = `Congrats, you have scored  ${this.score}`;
     }
-    if (this.netScore < 0) {
+    if (this.score <= 0) {
       this.result = 'Sorry, you lost, Try Again';
     }
 
@@ -160,54 +147,27 @@ this.text = this.add.text(32, 32);
         backgroundColor: '#000000',
       });
 
-    if (this.netScore > 0) {
-                  // this.scoreLine1 = this.add.text(config.width / 2 - 80, config.height / 2,
-                  //   'User   -   Score', {
-                  //     fontSize: this.game.config.width / 40,
-                  //     align: 'center',
-                  //     backgroundColor: '#000000',
-                  //   });
-                  // this.scoreLine1.setScrollFactor(0);
-                  // this.scoreLine2 = this.add.text(config.width / 2 - 80, config.height / 2 + 30,
-                  //   `Raj    -    ${this.netScore}`, {
-                  //     fontSize: this.game.config.width / 40,
-                  //     align: 'center',
-                  //     backgroundColor: '#000000',
-                  //   });
-                  // this.scoreLine2.setScrollFactor(0);
-// this.scene.start('DisplayScore', { level: this.netScore});
-      this.scene.start('DisplayScore', { level: this.netScore});
+    if (this.score > 0) {
+      this.gameScoreBtn = new Button(this, config.width / 2, config.height / 2 + 80,
+      'blueButton1', 'blueButton2', 'Score Board', '' );
+      this.gameScoreBtn.setScrollFactor(0);
+      setTimeout(() => {
+      this.scene.start('DisplayScore', { level: this.score});    // feedback.classList.remove('showItem');
+        }, 2000);
+    
     } else {
       this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-      'blueButton1', 'blueButton2', 'Quit Game', 'Title');
+      'blueButton1', 'blueButton2', 'Exit Game', 'Title');
       this.quitGameBtn.setScrollFactor(0);
     }
-
 
     this.gameOver.setScrollFactor(0);
     this.displayResult.setScrollFactor(0);
 
-//  this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-//       'blueButton1', 'blueButton2', 'Quit Game', 'DisplayScore');
-//     this.quitGameBtn.setScrollFactor(0);
-
-    // if (this.netScore > 18 ) {
-    //   this.getNameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-    //   'blueButton1', 'blueButton2', 'Your Name', 'UserScore');
-    // this.getNameBtn.setScrollFactor(0);
-// this.scene.start('UserScore', { level: this.netScore});
-    // }
-
-    // this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-    //   'blueButton1', 'blueButton2', 'Quit Game', 'Title');
-    // this.quitGameBtn.setScrollFactor(0);
   }
 
   update() {
-// this.text4.setText('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
-// this.render();
     this.plane.body.setVelocity(0);
-// this.text.setText('Event.progress: ' + timedEvent.getProgress().toString().substr(0, 4));
     // Horizontal movement
     if (this.cursors.left.isDown) {
       this.plane.body.setVelocityX(-80);
@@ -225,9 +185,4 @@ this.text = this.add.text(32, 32);
       this.upscore();
     }
   }
-
-  // render() {
-    // this.text4.setText('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
-    // this.game.text('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
-  // }
 }
