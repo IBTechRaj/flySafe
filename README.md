@@ -19,10 +19,12 @@ Go ahead and enjoy the game.  If you have suggestions, you are welcome to send t
 To run the project:
 
 Clone the repository: https://github.com/IBTechRaj/flySafe
-Run npm install. It will install all the dependencies required by the project
-Run npm start to start the development server. It will automatically open the page in your default browser.
+Change into the folder 'flySafe'.
+Run 'npm install'. It will install all the dependencies required by the project
+Run 'npm start' to start the development server. It will automatically open the page in your default browser.
 
 # Live Demo
+Live Demo of this game can be viewed at this [url](https://condescending-newton-3c1d49.netlify.com/).
 
 # Contribute
 Feel free to contribute if you want to make it better.
