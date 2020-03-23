@@ -1,13 +1,9 @@
 
 # flySafe - A browser based video game
 
-This is a video game you can play by clicking this link.
+This is a video game you can play by clicking [this link](https://condescending-newton-3c1d49.netlify.com/).
 
-In this game, when you click on 'Play' button in the opening screen, you will see an open sky with a plane at the centre.  You can see some birds flying across the screen in all directions. You have to fly your plane avoiding contact with the birds.
-
-You will be scoring continuously as long as you keep moving in any direction. The score is shown at the top left corner of the screen.  If you hit a bird, you will incur penalty of 20 points and that is shown just below your score.  Your final score is displayed in the third line at the top left corner.
-
-The game will end when you score more than 1000 points or get a negative score.  You will use 'Quit Game' button to come main menu.
+In this game, the player is required to navigate a plane in the sky.  He faces obstacles like flying birds and needs to maneuver the plane avoiding those obstacles.  He goes on scoring as long as flies safe avoiding the birds.  If he hits a bird then the game ends and he would be asked to enter his name to record the score. After that the names and scores of top five players would be displayed on the screen. If the player hits a bird even before he starts scoring then also the game ends and he has to exit the game and play again if he wants.
 
 Go ahead and enjoy the game.  If you have suggestions, you are welcome to send them to my email at the bottom of the screen.
 
