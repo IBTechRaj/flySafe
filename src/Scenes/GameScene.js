@@ -84,13 +84,13 @@ export default class GameScene extends Phaser.Scene {
       align: 'center',
       backgroundColor: '#000000',
     });
-    this.text4 = this.add.text(200, 10, 'Elapsed Time: ', {
-      fontSize: this.game.config.width / 40,
-      align: 'center',
-      backgroundColor: '#000000',
-    });
+    // this.text4 = this.add.text(200, 10, 'Elapsed Time: ', {
+    //   fontSize: this.game.config.width / 40,
+    //   align: 'center',
+    //   backgroundColor: '#000000',
+    // });
     this.text1.setScrollFactor(0);
-    this.text4.setScrollFactor(0);
+    // this.text4.setScrollFactor(0);
   }
 
   upscore() {
