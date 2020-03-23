@@ -24,7 +24,7 @@ export default class DisplayScoreScene extends Phaser.Scene {
     this.user = '';
     this.scoreList = [];
     this.user = this.inputName();
-    this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 100,
+    this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
       'blueButton1', 'blueButton2', 'Exit Game', 'Title');
     this.quitGameBtn.setScrollFactor(0);
   }
