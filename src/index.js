@@ -17,12 +17,7 @@ class Game extends Phaser.Game {
   constructor() {
     super(config);
     const model = new Model();
-// const formUtil = new FormUtil({
-//             scene: this,
-//             rows: 11,
-//             cols: 11
-//         });scene.add()
-    
+
     this.globals = { model, bgMusic: null };
     this.scene.add('Boot', BootScene);
     this.scene.add('Preloader', PreloaderScene);

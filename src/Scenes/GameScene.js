@@ -14,9 +14,8 @@ export default class GameScene extends Phaser.Scene {
   preload() {
   }
 
- 
-
   create() {
+    this.sys.game.globals.bgMusic.play();
     this.text = this.add.text(32, 32);
     this.displayResult = '';
     this.score = 0;
@@ -68,22 +67,15 @@ export default class GameScene extends Phaser.Scene {
       const speed = Math.floor(Math.random() * 100) + 15;
       child.body.setVelocity(vx * speed, vy * speed);
     });
-
     this.physics.add.collider(this.birdGroup, this.plane, this.birdScream, null, this);
     this.makeInfo();
   }
 
   birdScream(plane, bird) {
     this.sound.play('scream');
+    this.sys.game.globals.bgMusic.stop();
     bird.destroy();
-    // this.penalty += 5;
-    // this.text1.setText(`Score Earned: ${this.score}`);
-    // this.text2.setText(`Score Lost  : ${this.penalty}`);
-    // this.netScore = this.score - this.penalty;
-    // this.text3.setText(`Your Score  : ${this.netScore}`);
-    // if (this.netScore < 0 || this.netScore > 10) {
-      this.endGame();
-    // }
+    this.endGame();
   }
 
   makeInfo() {
@@ -92,36 +84,18 @@ export default class GameScene extends Phaser.Scene {
       align: 'center',
       backgroundColor: '#000000',
     });
-    // this.text2 = this.add.text(10, 30, 'Score Lost  : ', {
-    //   fontSize: this.game.config.width / 40,
-    //   align: 'center',
-    //   backgroundColor: '#000000',
-    // });
-    // this.text3 = this.add.text(10, 50, 'Your Score   : ', {
-    //   fontSize: this.game.config.width / 40,
-    //   align: 'center',
-    //   backgroundColor: '#000000',
-    // });
-  this.text4 = this.add.text(200, 10, 'Elapsed Time: ', {
+    this.text4 = this.add.text(200, 10, 'Elapsed Time: ', {
       fontSize: this.game.config.width / 40,
       align: 'center',
       backgroundColor: '#000000',
     });
     this.text1.setScrollFactor(0);
-    // this.text2.setScrollFactor(0);
-    // this.text3.setScrollFactor(0);
     this.text4.setScrollFactor(0);
   }
 
   upscore() {
-    // if (this.score <= 0 || this.score > 10) {
-    //   this.endGame();
-    // }
     this.score += 1;
     this.text1.setText(`Score Earned: ${this.score}`);
-    // this.text2.setText(`Score Lost  : ${this.penalty}`);
-    // this.netScore = this.score - this.penalty;
-    // this.text3.setText(`Your Score  : ${this.netScore}`);
   }
 
   endGame() {
@@ -130,9 +104,7 @@ export default class GameScene extends Phaser.Scene {
       align: 'center',
       backgroundColor: '#000000',
     });
-
     this.result = this.add.text('');
-
     if (this.score > 0) {
       this.result = `Congrats, you have scored  ${this.score}`;
     }
@@ -149,21 +121,18 @@ export default class GameScene extends Phaser.Scene {
 
     if (this.score > 0) {
       this.gameScoreBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-      'blueButton1', 'blueButton2', 'Score Board', '' );
+        'blueButton1', 'blueButton2', 'Score Board', '');
       this.gameScoreBtn.setScrollFactor(0);
       setTimeout(() => {
-      this.scene.start('DisplayScore', { level: this.score});    // feedback.classList.remove('showItem');
-        }, 2000);
-    
+        this.scene.start('DisplayScore', { level: this.score });
+      }, 2000);
     } else {
       this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-      'blueButton1', 'blueButton2', 'Exit Game', 'Title');
+        'blueButton1', 'blueButton2', 'Exit Game', 'Title');
       this.quitGameBtn.setScrollFactor(0);
     }
-
     this.gameOver.setScrollFactor(0);
     this.displayResult.setScrollFactor(0);
-
   }
 
   update() {
