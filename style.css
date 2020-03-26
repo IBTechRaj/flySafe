@@ -1,0 +1,19 @@
+#area51 {
+  width: 200px;
+  height: 30px;
+  background-color: #1EA7E1 ;
+  color: black;
+  font-size: 24px;
+  display: none;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#btnSend {
+ width: 200px;
+  height: 30px;
+  background-color: #1EA7E1;
+  color: black;
+  font-size: 18px;
+  display: none;
+}

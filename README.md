@@ -1,56 +1,42 @@
-# Phaser 3 Webpack Project Template
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+# flySafe - A browser based video game
 
-Loading images via JavaScript module `import` is also supported.
+This is a video game you can play by clicking [this link](https://condescending-newton-3c1d49.netlify.com/).
 
-## Requirements
+In this game, the player is required to navigate a plane in the sky.  He faces obstacles like flying birds and needs to maneuver the plane avoiding those obstacles.  He goes on scoring as long as he flies safe avoiding the birds.  If he hits a bird then the game ends and he would be asked to enter his name to record the score. After that the names and scores of top five players would be displayed on the screen. If the player hits a bird even before he starts scoring then also the game ends and he has to exit the game and play again if he wants.
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
-
-## Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
-
-## Writing Code
-
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+Go ahead and enjoy the game.  If you have suggestions, you are welcome to send them to my email at the bottom of the screen.
 
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+# Technologies
 
-## Customizing Template
+- Phaser 3.22.2 - a game engine
+- HTML/CSS/Javascript
+- Webpack
+- Promises
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+# Setup
+To run the project:
 
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
+Clone the repository: https://github.com/IBTechRaj/flySafe
+Change into the folder 'flySafe'.
+Run 'npm install'. It will install all the dependencies required by the project
+Run 'npm start' to start the development server. It will automatically open the page in your default browser.
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
+# Live Demo
+Live Demo of this game can be viewed at this [url](https://condescending-newton-3c1d49.netlify.com/).
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+# Contribute
+Feel free to contribute if you want to make it better.
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
-# flySafe
+# Author
+* [Rajasekhar K ](https://github.com/IBTechRaj)
+
+Github: https://github.com/IBTechRaj
+* Email : krs30018@gmail.com 
+* raj_shk@rediffmail.com
+
+# Follow Me
+
+* [LinkedIn](https://www.linkedin.com/in/rajkatakamsetty/)
+* [Twitter](https://twitter.com/IBTechRaj)
