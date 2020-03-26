@@ -84,12 +84,12 @@ export default class DisplayScoreScene extends Phaser.Scene {
       .then(response => response.json())
       .then(scores => {
         const { result } = scores;
-        console.log(result);
+        // console.log(result);
         result.forEach((row) => {
           const { user, score } = row;
           topScores.push([user, score]);
         });
-
+        // console.log(result.length);
         topScores.sort((x, y) => {
           if (x[1] === y[1]) {
             return 0;
@@ -142,6 +142,14 @@ export default class DisplayScoreScene extends Phaser.Scene {
     [user, score] = data[4];
     this.scoreLine6 = this.add.text(config.width / 2 - 80, config.height / 2 - 40,
       `${user}   -   ${score}`, {
+        fontSize: this.game.config.width / 40,
+        align: 'center',
+        backgroundColor: '#000000',
+      });
+    this.scoreLine6.setScrollFactor(0);
+
+    this.scoreLine6 = this.add.text(config.width / 2 - 180, config.height / 2,
+      `This game has been played ${data.length - 50} times`, {
         fontSize: this.game.config.width / 40,
         align: 'center',
         backgroundColor: '#000000',
