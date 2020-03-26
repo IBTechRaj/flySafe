@@ -17,21 +17,21 @@ export default class OptionsScene extends Phaser.Scene {
     this.musicButton = this.add.image(200, 100, 'checkedBox');
     this.musicText = this.add.text(250, 100, 'Music Enabled', { fontSize: 24 });
 
-    this.soundButton = this.add.image(200, 150, 'checkedBox');
-    this.soundText = this.add.text(250, 150, 'Sound Enabled', { fontSize: 24 });
+    // this.soundButton = this.add.image(200, 150, 'checkedBox');
+    // this.soundText = this.add.text(250, 150, 'Sound Enabled', { fontSize: 24 });
 
     this.musicButton.setInteractive();
-    this.soundButton.setInteractive();
+    // this.soundButton.setInteractive();
 
     this.musicButton.on('pointerdown', () => {
       this.model.musicOn = !this.model.musicOn;
       this.updateAudio();
     });
 
-    this.soundButton.on('pointerdown', () => {
-      this.model.soundOn = !this.model.soundOn;
-      this.updateAudio();
-    });
+    // this.soundButton.on('pointerdown', () => {
+    //   this.model.soundOn = !this.model.soundOn;
+    //   this.updateAudio();
+    // });
 
     // this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Menu', 'Title');
     this.gameButton = new Button(this, config.width / 2, config.height / 2 + 100, 'blueButton1', 'blueButton2', 'Back', 'Title');
@@ -52,10 +52,10 @@ export default class OptionsScene extends Phaser.Scene {
       }
     }
 
-    if (this.model.soundOn === false) {
-      this.soundButton.setTexture('box');
-    } else {
-      this.soundButton.setTexture('checkedBox');
-    }
+    // if (this.model.soundOn === false) {
+    //   this.soundButton.setTexture('box');
+    // } else {
+    //   this.soundButton.setTexture('checkedBox');
+    // }
   }
 }

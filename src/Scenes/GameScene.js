@@ -15,7 +15,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    this.sys.game.globals.bgMusic.play();
+    // this.sys.game.globals.bgMusic.play();
     this.text = this.add.text(32, 32);
     this.displayResult = '';
     this.score = 0;
@@ -75,7 +75,7 @@ export default class GameScene extends Phaser.Scene {
 
   birdScream(plane, bird) {
     this.sound.play('scream');
-    this.sys.game.globals.bgMusic.stop();
+    // this.sys.game.globals.bgMusic.stop();
     bird.destroy();
     this.endGame();
   }
