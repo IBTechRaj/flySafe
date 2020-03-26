@@ -24,9 +24,6 @@ export default class DisplayScoreScene extends Phaser.Scene {
     this.user = '';
     this.scoreList = [];
     this.user = this.inputName();
-    this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
-      'blueButton1', 'blueButton2', 'Exit Game', 'Title');
-    this.quitGameBtn.setScrollFactor(0);
   }
 
   inputName() {
@@ -76,6 +73,9 @@ export default class DisplayScoreScene extends Phaser.Scene {
     setTimeout(() => {
       this.getScores();
     }, 1000);
+    this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
+      'blueButton1', 'blueButton2', 'Exit Game', 'Title');
+    this.quitGameBtn.setScrollFactor(0);
   }
 
   async getScores() {
@@ -84,6 +84,7 @@ export default class DisplayScoreScene extends Phaser.Scene {
       .then(response => response.json())
       .then(scores => {
         const { result } = scores;
+        console.log(result);
         result.forEach((row) => {
           const { user, score } = row;
           topScores.push([user, score]);

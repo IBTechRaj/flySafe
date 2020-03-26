@@ -33,4 +33,4 @@ class Game extends Phaser.Game {
 }
 
 // let game;
-window.game = new Game();
+window.game = new Game({ render: this.render });

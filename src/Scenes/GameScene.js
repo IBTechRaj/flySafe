@@ -65,7 +65,9 @@ export default class GameScene extends Phaser.Scene {
         vy = 1;
       }
       const speed = Math.floor(Math.random() * 100) + 15;
-      child.body.setVelocity(vx * speed, vy * speed);
+      setTimeout(() => {
+        child.body.setVelocity(vx * speed, vy * speed);
+      }, 1000);
     });
     this.physics.add.collider(this.birdGroup, this.plane, this.birdScream, null, this);
     this.makeInfo();
@@ -125,7 +127,7 @@ export default class GameScene extends Phaser.Scene {
       this.gameScoreBtn.setScrollFactor(0);
       setTimeout(() => {
         this.scene.start('DisplayScore', { level: this.score });
-      }, 2000);
+      }, 1000);
     } else {
       this.quitGameBtn = new Button(this, config.width / 2, config.height / 2 + 80,
         'blueButton1', 'blueButton2', 'Exit Game', 'Title');
@@ -153,5 +155,9 @@ export default class GameScene extends Phaser.Scene {
       this.plane.body.setVelocityY(80);
       this.upscore();
     }
+  }
+
+  render() {
+    this.game.debug.text(`Elapsed seconds: ${this.game.time.totalElapsedSeconds()}`, 32, 32);
   }
 }
