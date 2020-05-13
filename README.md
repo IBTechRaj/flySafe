@@ -24,7 +24,7 @@ Run 'npm install'. It will install all the dependencies required by the project
 Run 'npm start' to start the development server. It will automatically open the page in your default browser.
 
 # Live Demo
-Live Demo of this game can be viewed at this [url](https://condescending-newton-3c1d49.netlify.com/).
+Live Demo of this game can be viewed at this [url](https://https://aeroplane.netlify.app//).
 
 # Contribute
 Feel free to contribute if you want to make it better.
