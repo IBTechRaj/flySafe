@@ -1,7 +1,7 @@
 
 # flySafe - A browser based video game
 
-This is a video game you can play by clicking [this link](https://condescending-newton-3c1d49.netlify.com/).
+This is a video game you can play by clicking [this link](https://aeroplane.netlify.app/).
 
 In this game, the player is required to navigate a plane in the sky.  He faces obstacles like flying birds and needs to maneuver the plane avoiding those obstacles.  He goes on scoring as long as he flies safe avoiding the birds.  If he hits a bird then the game ends and he would be asked to enter his name to record the score. After that the names and scores of top five players would be displayed on the screen. If the player hits a bird even before he starts scoring then also the game ends and he has to exit the game and play again if he wants.
 
