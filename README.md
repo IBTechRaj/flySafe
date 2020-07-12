@@ -32,8 +32,11 @@ Live Demo of this game can be viewed at this [url](https://aeroplane.netlify.app
 
 # Screen Shots
 ![Game screen shot 1](/images/flySafe1.png)
+
 ![Game screen shot 2](/images/flySafe2.png)
+
 ![Game screen shot 3](/images/flySafe3.png)
+
 ![Game screen shot 4](/images/flySafe4.png)
 
 
