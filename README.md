@@ -7,6 +7,10 @@ In this game, the player is required to navigate a plane in the sky.  He faces o
 
 Go ahead and enjoy the game.  If you have suggestions, you are welcome to send them to my email at the bottom of the screen.
 
+# Features
+
+- Keypad based game play using arrow keys
+- Saving scores and display of high scores
 
 # Technologies
 
@@ -25,6 +29,10 @@ Run 'npm start' to start the development server. It will automatically open the 
 
 # Live Demo
 Live Demo of this game can be viewed at this [url](https://aeroplane.netlify.app//).
+
+# Screen Shots
+![Game screen shot 1](/images/flySafe1.png)
+
 
 # Contribute
 Feel free to contribute if you want to make it better.
