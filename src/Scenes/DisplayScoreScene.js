@@ -63,7 +63,37 @@ export default class DisplayScoreScene extends Phaser.Scene {
     elno = document.getElementById('btnSend');
     elno.style.display = 'none';
 
-    this.scoreLine1 = this.add.text(config.width / 2 - 50, config.height / 2 - 150,
+    this.scoreLine0 = this.add.text(config.width / 2 - 50, config.height / 2 - 150,
+      'Top Scores', {
+        fontSize: this.game.config.width / 40,
+        align: 'center',
+        backgroundColor: '#000000',
+      });
+    this.scoreLine0.setScrollFactor(0);
+    this.scoreLine1 = this.add.text(config.width / 2 - 50, config.height / 2 - 150,# Technologies
+
+- HTML5
+- CSS3
+- Bootstrap 4
+
+# Live Demo
+
+You can view the live website [here](https://newbierecipes.com/)
+
+# Contribute
+Feel free to contribute if you want to make it better.
+
+# Author
+* [Rajasekhar K ](https://github.com/IBTechRaj)
+
+Github: https://github.com/IBTechRaj
+* Email : krs30018@gmail.com 
+* raj_shk@rediffmail.com
+
+# Follow Me
+
+* [LinkedIn](https://www.linkedin.com/in/rajkatakamsetty/)
+* [Twitter](https://twitter.com/IBTechRaj)
       'Top Scores', {
         fontSize: this.game.config.width / 40,
         align: 'center',
